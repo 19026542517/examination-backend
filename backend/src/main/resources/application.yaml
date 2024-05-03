@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shoppingcentre
+    password: 051727
+    username: root
+  data:
+    redis:
+      url: contos.redis.com:6379 #redis连接
+  jackson:
+    date-format: yyyy-MM-dd
+    default-property-inclusion: non_null # JSON忽略空字段
+  mvc:
+    servlet:
+      load-on-startup: 0
+server:
+  port: 9005
+  servlet:
+    context-path: / #地址
+mybatis:
+  type-aliases-package:  # ???
+  mapper-locations: classpath:mapper/**/*.xml #指定mapper扫描包
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰命名
+
+
+
